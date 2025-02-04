@@ -1,0 +1,18 @@
+<!-- login.html -->
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}Вход в систему{% endblock %}
+
+{% block content %}
+<div class="login-flex">
+    <div class="login">
+        <img src="{% static 'images/logo.svg' %}" alt="Логотип" class="logo-new-vers">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="big-button">Войти</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
